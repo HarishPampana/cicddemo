@@ -93,6 +93,7 @@ branch 'master' set up to track 'origin/master'.
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+<<<<<<< HEAD
 $ git add .
 warning: in the working copy of 'git_commands.txt', LF will be replaced by CRLF the next time Git touches it
 
@@ -141,6 +142,44 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   git_commands.txt
 
+=======
+$ git branch
+  main
+* master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git checkout main
+Switched to branch 'main'
+M       git_commands.txt
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+* main
+  master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git checkout -b harish
+Switched to a new branch 'harish'
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+* harish
+  main
+  master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git checkout main
+Switched to branch 'main'
+M       git_commands.txt
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+  main
+* master
+>>>>>>> master
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
 $ git log
@@ -163,12 +202,23 @@ Date:   Tue Jan 17 07:15:02 2023 +0000
     1st commit
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+<<<<<<< HEAD
+=======
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        git_commands.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+>>>>>>> master
 $ git branch
   harish
   main
 * master
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+<<<<<<< HEAD
 $ git commit -m "4th commit"
 [master 96828b5] 4th commit
  Committer: Harish Pampana <Harish.Pampana@procco.com>
@@ -230,6 +280,17 @@ Date:   Tue Jan 17 07:40:31 2023 +0000
     4th commit
 
 commit b46769574ecc4ad3d0d6a4552b97b53bcf0b610c (harish)
+=======
+$ git add .
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git commit "6th commit"
+error: pathspec '6th commit' did not match any file(s) known to git
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git log
+commit b46769574ecc4ad3d0d6a4552b97b53bcf0b610c (HEAD -> master, origin/master, harish)
+>>>>>>> master
 Author: Harish Pampana <Harish.Pampana@procco.com>
 Date:   Tue Jan 17 07:30:38 2023 +0000
 
@@ -248,5 +309,22 @@ Date:   Tue Jan 17 07:15:02 2023 +0000
     1st commit
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+<<<<<<< HEAD
+=======
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   git_commands.txt
+
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git push
+Everything up-to-date
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+>>>>>>> master
 $
 
