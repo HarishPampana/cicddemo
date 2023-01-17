@@ -379,3 +379,109 @@ $ git branch
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
 $
 
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+  main
+* master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git merge main
+Updating 96828b5..c01cd3e
+Fast-forward
+ git_commands.txt | 121 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 121 insertions(+)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+  main
+* master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ vim git_commands.txt
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_commands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git log
+commit c01cd3e5470db22ade1ba882e27416772cdda194 (HEAD -> master, main)
+Merge: b841a85 96828b5
+Author: HarishPampana <pampanaharish454@gmail.com>
+Date:   Tue Jan 17 08:06:02 2023 +0000
+
+    Merge branch 'master'
+
+commit b841a850437a84e1af49c3e909d4ea772238f408
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:59:35 2023 +0000
+
+    5th commit
+
+commit 96828b505002d718843fa968a7003c8140c4414f (origin/master)
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:54:49 2023 +0000
+
+    4th commit
+
+commit 380d011288df53232271bdf299b1e307de803cb3
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:40:31 2023 +0000
+
+    4th commit
+
+commit b46769574ecc4ad3d0d6a4552b97b53bcf0b610c (harish)
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:30:38 2023 +0000
+
+    3rd commit
+
+commit b63b4599c2b167fd1858de8e10423d6d8365d1fc
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:25:46 2023 +0000
+
+    2nd commit
+
+commit 1b26f917b8f25144a5c0b2c13d7065bf39ef8e19
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:15:02 2023 +0000
+
+    1st commit
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ vim git_commands.txt
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git add .
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git commit -m "6th commit"
+[master 07f2726] 6th commit
+ 1 file changed, 51 insertions(+)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git push
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.93 KiB | 495.00 KiB/s, done.
+Total 12 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To https://github.com/HarishPampana/cicddemo.git
+   96828b5..07f2726  master -> master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
+
