@@ -1,0 +1,37 @@
+$ git remote -v
+origin  ssh://git@github.com:HarishPampana/cicddemo.git (fetch)
+origin  ssh://git@github.com:HarishPampana/cicddemo.git (push)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git remote remove origin
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git remote -v
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git remote add origin https://github.com/HarishPampana/cicddemo.git
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git remote -v
+origin  https://github.com/HarishPampana/cicddemo.git (fetch)
+origin  https://github.com/HarishPampana/cicddemo.git (push)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ cat ./.git/config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+[remote "origin"]
+        url = https://github.com/HarishPampana/cicddemo.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+
