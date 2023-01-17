@@ -92,4 +92,44 @@ To https://github.com/HarishPampana/cicddemo.git
 branch 'master' set up to track 'origin/master'.
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git add .
+warning: in the working copy of 'git_commands.txt', LF will be replaced by CRLF the next time Git touches it
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git commit -m "3rd commit"
+[master b467695] 3rd commit
+ Committer: Harish Pampana <Harish.Pampana@procco.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 58 insertions(+)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git push --set-upstream origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/HarishPampana/cicddemo.git'
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git push  origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.32 KiB | 1.32 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/HarishPampana/cicddemo.git
+   b63b459..b467695  master -> master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
 
