@@ -132,4 +132,121 @@ To https://github.com/HarishPampana/cicddemo.git
 
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
 $
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   git_commands.txt
+
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git log
+commit b46769574ecc4ad3d0d6a4552b97b53bcf0b610c (HEAD -> master, origin/master, harish)
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:30:38 2023 +0000
+
+    3rd commit
+
+commit b63b4599c2b167fd1858de8e10423d6d8365d1fc
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:25:46 2023 +0000
+
+    2nd commit
+
+commit 1b26f917b8f25144a5c0b2c13d7065bf39ef8e19
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:15:02 2023 +0000
+
+    1st commit
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+  main
+* master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git commit -m "4th commit"
+[master 96828b5] 4th commit
+ Committer: Harish Pampana <Harish.Pampana@procco.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 114 insertions(+)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 895 bytes | 895.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/HarishPampana/cicddemo.git
+   b467695..96828b5  master -> master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch main
+fatal: a branch named 'main' already exists
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git checkout main
+Switched to branch 'main'
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+
+  harish
+* main
+  master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git log
+commit 380d011288df53232271bdf299b1e307de803cb3 (HEAD -> main)
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:40:31 2023 +0000
+
+    4th commit
+
+commit b46769574ecc4ad3d0d6a4552b97b53bcf0b610c (harish)
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:30:38 2023 +0000
+
+    3rd commit
+
+commit b63b4599c2b167fd1858de8e10423d6d8365d1fc
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:25:46 2023 +0000
+
+    2nd commit
+
+commit 1b26f917b8f25144a5c0b2c13d7065bf39ef8e19
+Author: Harish Pampana <Harish.Pampana@procco.com>
+Date:   Tue Jan 17 07:15:02 2023 +0000
+
+    1st commit
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
 
