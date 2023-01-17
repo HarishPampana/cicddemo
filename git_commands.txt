@@ -327,4 +327,55 @@ Everything up-to-date
 Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
 >>>>>>> master
 $
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+* main
+  master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git brach
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+  main
+* master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git merge main
+Updating 96828b5..c01cd3e
+Fast-forward
+ git_commands.txt | 121 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 121 insertions(+)
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$ git branch
+  harish
+  main
+* master
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo
+$
 
