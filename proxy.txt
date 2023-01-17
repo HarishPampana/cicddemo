@@ -1,0 +1,299 @@
+http://10.0.100.245/wpad.dat
+
+C:\WINDOWS\system32>minikube start
+* minikube v1.28.0 on Microsoft Windows 10 Pro 10.0.19045 Build 19045
+* Automatically selected the docker driver. Other choices: hyperv, virtualbox, ssh
+* Using Docker Desktop driver with root privileges
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Downloading Kubernetes v1.25.3 preload ...
+    > preloaded-images-k8s-v18-v1...:  385.44 MiB / 385.44 MiB  100.00% 3.95 Mi
+    > gcr.io/k8s-minikube/kicbase:  386.27 MiB / 386.27 MiB  100.00% 2.99 MiB p
+* Creating docker container (CPUs=2, Memory=2200MB) ...
+* Preparing Kubernetes v1.25.3 on Docker 20.10.20 ...
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\WINDOWS\system32>
+C:\Users\harish.pampana>kubectl get po -A
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+kube-system   coredns-565d847f94-7lkfl           1/1     Running   0          2m47s
+kube-system   etcd-minikube                      1/1     Running   0          3m2s
+kube-system   kube-apiserver-minikube            1/1     Running   0          2m59s
+kube-system   kube-controller-manager-minikube   1/1     Running   0          3m
+kube-system   kube-proxy-4t79k                   1/1     Running   0          2m48s
+kube-system   kube-scheduler-minikube            1/1     Running   0          3m2s
+kube-system   storage-provisioner                1/1     Running   0          2m55s
+
+C:\Users\harish.pampana>
+C:\Users\harish.pampana>minikube dashboard
+* Enabling dashboard ...
+  - Using image docker.io/kubernetesui/dashboard:v2.7.0
+  - Using image docker.io/kubernetesui/metrics-scraper:v1.0.8
+* Some dashboard features require the metrics-server addon. To enable all features please run:
+
+        minikube addons enable metrics-server
+
+
+* Verifying dashboard health ...
+* Launching proxy ...
+* Verifying proxy health ...
+* Opening http://127.0.0.1:64285/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+
+
+
+
+C:\WINDOWS\system32>minikube addons enable metrics-server
+* metrics-server is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
+You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+  - Using image k8s.gcr.io/metrics-server/metrics-server:v0.6.1
+* The 'metrics-server' addon is enabled
+
+C:\WINDOWS\system32>
+
+C:\WINDOWS\system32>minikube addons list
+|-----------------------------|----------|--------------|--------------------------------|
+|         ADDON NAME          | PROFILE  |    STATUS    |           MAINTAINER           |
+|-----------------------------|----------|--------------|--------------------------------|
+| ambassador                  | minikube | disabled     | 3rd party (Ambassador)         |
+| auto-pause                  | minikube | disabled     | Google                         |
+| cloud-spanner               | minikube | disabled     | Google                         |
+| csi-hostpath-driver         | minikube | disabled     | Kubernetes                     |
+| dashboard                   | minikube | enabled ✅   | Kubernetes                     |
+| default-storageclass        | minikube | enabled ✅   | Kubernetes                     |
+| efk                         | minikube | disabled     | 3rd party (Elastic)            |
+| freshpod                    | minikube | disabled     | Google                         |
+| gcp-auth                    | minikube | disabled     | Google                         |
+| gvisor                      | minikube | disabled     | Google                         |
+| headlamp                    | minikube | disabled     | 3rd party (kinvolk.io)         |
+| helm-tiller                 | minikube | disabled     | 3rd party (Helm)               |
+| inaccel                     | minikube | disabled     | 3rd party (InAccel             |
+|                             |          |              | [info@inaccel.com])            |
+| ingress                     | minikube | disabled     | Kubernetes                     |
+| ingress-dns                 | minikube | disabled     | Google                         |
+| istio                       | minikube | disabled     | 3rd party (Istio)              |
+| istio-provisioner           | minikube | disabled     | 3rd party (Istio)              |
+| kong                        | minikube | disabled     | 3rd party (Kong HQ)            |
+| kubevirt                    | minikube | disabled     | 3rd party (KubeVirt)           |
+| logviewer                   | minikube | disabled     | 3rd party (unknown)            |
+| metallb                     | minikube | disabled     | 3rd party (MetalLB)            |
+| metrics-server              | minikube | enabled ✅   | Kubernetes                     |
+| nvidia-driver-installer     | minikube | disabled     | Google                         |
+| nvidia-gpu-device-plugin    | minikube | disabled     | 3rd party (Nvidia)             |
+| olm                         | minikube | disabled     | 3rd party (Operator Framework) |
+| pod-security-policy         | minikube | disabled     | 3rd party (unknown)            |
+| portainer                   | minikube | disabled     | 3rd party (Portainer.io)       |
+| registry                    | minikube | disabled     | Google                         |
+| registry-aliases            | minikube | disabled     | 3rd party (unknown)            |
+| registry-creds              | minikube | disabled     | 3rd party (UPMC Enterprises)   |
+| storage-provisioner         | minikube | enabled ✅   | Google                         |
+| storage-provisioner-gluster | minikube | disabled     | 3rd party (Gluster)            |
+| volumesnapshots             | minikube | disabled     | Kubernetes                     |
+|-----------------------------|----------|--------------|--------------------------------|
+
+C:\WINDOWS\system32>
+
+C:\WINDOWS\system32>helm repo add bitnami https://charts.bitnami.com/bitnami
+Error: looks like "https://charts.bitnami.com/bitnami" is not a valid chart repository or cannot be reached: Get "https://charts.bitnami.com/bitnami/index.yaml": http: server gave HTTP response to HTTPS client
+
+C:\WINDOWS\system32>helm repo add bitnami https://charts.bitnami.com/bitnami
+"bitnami" has been added to your repositories
+
+C:\WINDOWS\system32>helm ls
+NAME    NAMESPACE       REVISION        UPDATED STATUS  CHART   APP VERSION
+
+C:\WINDOWS\system32>helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "bitnami" chart repository
+Update Complete. ⎈Happy Helming!⎈
+
+C:\WINDOWS\system32>helm ls
+NAME    NAMESPACE       REVISION        UPDATED STATUS  CHART   APP VERSION
+
+C:\WINDOWS\system32>
+
+C:\WINDOWS\system32>helm install redis bitnami/redis
+NAME: redis
+LAST DEPLOYED: Mon Jan 16 18:31:42 2023
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: redis
+CHART VERSION: 17.4.2
+APP VERSION: 7.0.7
+
+** Please be patient while the chart is being deployed **
+
+Redis&reg; can be accessed on the following DNS names from within your cluster:
+
+    redis-master.default.svc.cluster.local for read/write operations (port 6379)
+    redis-replicas.default.svc.cluster.local for read-only operations (port 6379)
+
+
+
+To get your password run:
+
+    export REDIS_PASSWORD=$(kubectl get secret --namespace default redis -o jsonpath="{.data.redis-password}" | base64 -d)
+
+To connect to your Redis&reg; server:
+
+1. Run a Redis&reg; pod that you can use as a client:
+
+   kubectl run --namespace default redis-client --restart='Never'  --env REDIS_PASSWORD=$REDIS_PASSWORD  --image docker.io/bitnami/redis:7.0.7-debian-11-r7 --command -- sleep infinity
+
+   Use the following command to attach to the pod:
+
+   kubectl exec --tty -i redis-client \
+   --namespace default -- bash
+
+2. Connect using the Redis&reg; CLI:
+   REDISCLI_AUTH="$REDIS_PASSWORD" redis-cli -h redis-master
+   REDISCLI_AUTH="$REDIS_PASSWORD" redis-cli -h redis-replicas
+
+To connect to your database from outside the cluster execute the following commands:
+
+    kubectl port-forward --namespace default svc/redis-master 6379:6379 &
+    REDISCLI_AUTH="$REDIS_PASSWORD" redis-cli -h 127.0.0.1 -p 6379
+
+C:\WINDOWS\system32>
+
+C:\WINDOWS\system32>helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+"prometheus-community" has been added to your repositories
+
+C:\WINDOWS\system32>helm install prometheus prometheus-community/prometheus
+NAME: prometheus
+LAST DEPLOYED: Mon Jan 16 18:33:59 2023
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+prometheus-server.default.svc.cluster.local
+
+
+Get the Prometheus server URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=server" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9090
+
+
+The Prometheus alertmanager can be accessed via port  on the following DNS name from within your cluster:
+prometheus-%!s(<nil>).default.svc.cluster.local
+
+
+Get the Alertmanager URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9093
+#################################################################################
+######   WARNING: Pod Security Policy has been disabled by default since    #####
+######            it deprecated after k8s 1.25+. use                        #####
+######            (index .Values "prometheus-node-exporter" "rbac"          #####
+###### .          "pspEnabled") with (index .Values                         #####
+######            "prometheus-node-exporter" "rbac" "pspAnnotations")       #####
+######            in case you still need it.                                #####
+#################################################################################
+
+
+The Prometheus PushGateway can be accessed via port 9091 on the following DNS name from within your cluster:
+prometheus-prometheus-pushgateway.default.svc.cluster.local
+
+
+Get the PushGateway URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus-pushgateway,component=pushgateway" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9091
+
+For more information on running Prometheus, visit:
+https://prometheus.io/
+
+C:\WINDOWS\system32>
+C:\WINDOWS\system32>kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-np
+service/prometheus-server-np exposed
+
+C:\WINDOWS\system32>kubectl get svc
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes                            ClusterIP   10.96.0.1        <none>        443/TCP        27m
+prometheus-alertmanager               ClusterIP   10.98.97.172     <none>        9093/TCP       20s
+prometheus-alertmanager-headless      ClusterIP   None             <none>        9093/TCP       20s
+prometheus-kube-state-metrics         ClusterIP   10.111.174.221   <none>        8080/TCP       20s
+prometheus-prometheus-node-exporter   ClusterIP   10.103.82.23     <none>        9100/TCP       20s
+prometheus-prometheus-pushgateway     ClusterIP   10.108.165.199   <none>        9091/TCP       20s
+prometheus-server                     ClusterIP   10.103.73.121    <none>        80/TCP         20s
+prometheus-server-np                  NodePort    10.105.62.179    <none>        80:30924/TCP   6s
+redis-headless                        ClusterIP   None             <none>        6379/TCP       2m37s
+redis-master                          ClusterIP   10.111.214.85    <none>        6379/TCP       2m37s
+redis-replicas                        ClusterIP   10.99.231.215    <none>        6379/TCP       2m37s
+
+C:\WINDOWS\system32>minikube service prometheus-server-np --url
+http://127.0.0.1:61634
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\WINDOWS\system32>helm repo add grafana https://grafana.github.io/helm-charts
+"grafana" has been added to your repositories
+
+C:\WINDOWS\system32>helm install grafana grafana/grafana
+NAME: grafana
+LAST DEPLOYED: Mon Jan 16 18:36:06 2023
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get your 'admin' user password by running:
+
+   kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+
+   grafana.default.svc.cluster.local
+
+   Get the Grafana URL to visit by running these commands in the same shell:
+     export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}")
+     kubectl --namespace default port-forward $POD_NAME 3000
+
+3. Login with the password from step 1 and the username: admin
+#################################################################################
+######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+######            the Grafana pod is terminated.                            #####
+#################################################################################
+
+C:\WINDOWS\system32>kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-np
+service/grafana-np exposed
+
+C:\WINDOWS\system32>kubectl get services
+NAME                                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+grafana                               ClusterIP   10.99.133.102    <none>        80/TCP         18s
+grafana-np                            NodePort    10.96.71.252     <none>        80:32270/TCP   8s
+kubernetes                            ClusterIP   10.96.0.1        <none>        443/TCP        30m
+prometheus-alertmanager               ClusterIP   10.98.97.172     <none>        9093/TCP       2m41s
+prometheus-alertmanager-headless      ClusterIP   None             <none>        9093/TCP       2m41s
+prometheus-kube-state-metrics         ClusterIP   10.111.174.221   <none>        8080/TCP       2m41s
+prometheus-prometheus-node-exporter   ClusterIP   10.103.82.23     <none>        9100/TCP       2m41s
+prometheus-prometheus-pushgateway     ClusterIP   10.108.165.199   <none>        9091/TCP       2m41s
+prometheus-server                     ClusterIP   10.103.73.121    <none>        80/TCP         2m41s
+prometheus-server-np                  NodePort    10.105.62.179    <none>        80:30924/TCP   2m27s
+redis-headless                        ClusterIP   None             <none>        6379/TCP       4m58s
+redis-master                          ClusterIP   10.111.214.85    <none>        6379/TCP       4m58s
+redis-replicas                        ClusterIP   10.99.231.215    <none>        6379/TCP       4m58s
+
+C:\WINDOWS\system32>kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+'base64' is not recognized as an internal or external command,
+operable program or batch file.
+
+Harish.Pampana@UCFS-TEMP-001 ~
+$ kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+1FQ5Tn7m9aMnjjf30950tOVfrAUFDrgN6RfQYGGp
+
+Harish.Pampana@UCFS-TEMP-001 ~
+
+C:\WINDOWS\system32>minikube service grafana-np --url
+http://127.0.0.1:61755
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+
+
+
