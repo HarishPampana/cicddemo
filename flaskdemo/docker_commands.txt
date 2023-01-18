@@ -1,0 +1,90 @@
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: harishpampana
+Password:
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED          SIZE
+flasktestimg                  latest    a098f338bbe3   20 minutes ago   61.7MB
+myapp/frontend-test           latest    12c2ef89c04c   57 minutes ago   205MB
+gcr.io/k8s-minikube/kicbase   v0.0.36   866c1fe4e3f2   2 months ago     1.11GB
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker build -t harishpampana/flasktestimg .
+[+] Building 8.5s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                                                       0.9s
+ => => transferring dockerfile: 31B                                                                                                                                                        0.0s
+ => [internal] load .dockerignore                                                                                                                                                          0.8s
+ => => transferring context: 2B                                                                                                                                                            0.0s
+ => [internal] load metadata for docker.io/library/python:3.10-alpine                                                                                                                      7.3s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                              0.0s
+ => [1/4] FROM docker.io/library/python:3.10-alpine@sha256:d24c0f4b6c6ab21788e3761d4e74c78c0ce39d5d232ef5a49706d894ae23eb30                                                                0.0s
+ => [internal] load build context                                                                                                                                                          0.1s
+ => => transferring context: 92B                                                                                                                                                           0.0s
+ => CACHED [2/4] WORKDIR /app                                                                                                                                                              0.0s
+ => CACHED [3/4] COPY . .                                                                                                                                                                  0.0s
+ => CACHED [4/4] RUN pip install -r requirements.txt                                                                                                                                       0.0s
+ => exporting to image                                                                                                                                                                     0.1s
+ => => exporting layers                                                                                                                                                                    0.0s
+ => => writing image sha256:a098f338bbe348e4f68ae2a1414bf7726688dfa8b105244e0d47709b7c9541fb                                                                                               0.0s
+ => => naming to docker.io/harishpampana/flasktestimg                                                                                                                                      0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED          SIZE
+flasktestimg                  latest    a098f338bbe3   21 minutes ago   61.7MB
+harishpampana/flasktestimg    latest    a098f338bbe3   21 minutes ago   61.7MB
+myapp/frontend-test           latest    12c2ef89c04c   58 minutes ago   205MB
+gcr.io/k8s-minikube/kicbase   v0.0.36   866c1fe4e3f2   2 months ago     1.11GB
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker image rm flasktestimg
+Untagged: flasktestimg:latest
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED          SIZE
+harishpampana/flasktestimg    latest    a098f338bbe3   22 minutes ago   61.7MB
+myapp/frontend-test           latest    12c2ef89c04c   59 minutes ago   205MB
+gcr.io/k8s-minikube/kicbase   v0.0.36   866c1fe4e3f2   2 months ago     1.11GB
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker push harishpampana/flasktestimg
+Using default tag: latest
+The push refers to repository [docker.io/harishpampana/flasktestimg]
+9f8fda9fb254: Pushed
+bed85c22583d: Pushed
+a71e930a23c8: Pushed
+db222f4176bc: Mounted from library/python
+f05f62380b07: Mounted from library/python
+cb446ccaa93b: Mounted from library/python
+4efbcf210682: Mounted from library/python
+8e012198eea1: Mounted from library/python
+latest: digest: sha256:a0f0cf04d7b6ae8d1785fd727b6a38860cd33bcf192b5d15c75ed5a3afa9e34c size: 1992
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$ docker run -p 5000:5000 harishpampana/flasktestimg
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.0.2:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-286-730
+172.17.0.1 - - [18/Jan/2023 08:50:34] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [18/Jan/2023 08:50:34] "GET /favicon.ico HTTP/1.1" 404 -
+
+Harish.Pampana@UCFS-TEMP-001 ~/cicddemo/flaskdemo
+$
+
