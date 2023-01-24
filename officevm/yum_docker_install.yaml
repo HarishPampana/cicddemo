@@ -12,7 +12,7 @@
        var: ansible_facts.packages['docker-ce']
 
    - name: using command module to install docker-ce
-     command: sudo yum install docker-ce --nobest -y
+     command: sudo yum install docker-ce docker-ce-cli containerd.io --nobest -y
      when: "'docker-ce' not in ansible_facts.packages"
      register: install_res
 

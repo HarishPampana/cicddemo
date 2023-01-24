@@ -1,0 +1,9 @@
+---
+- hosts: 'kmasters,kworkers'
+  become: true
+  remote_user: root
+  tasks:
+  - name: Uninstall podman buildah
+    yum:
+      name: podman,buildah
+      state: absent
