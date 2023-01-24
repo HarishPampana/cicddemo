@@ -1,0 +1,21 @@
+---
+- hosts: 'kmasters,kworkers'
+  become: true
+  remote_user: root
+  gather_facts: False
+
+  tasks:
+  - name: Copy & Create File.
+    copy:
+      dest: /tmp/remote.sh
+      content: |
+      #!/bin/bash
+      #echo "Hello"
+
+  - name: Run Shell Script.
+    shell: sh /tmp/remote.sh
+
+  - name: Remove Shell Script
+    file:
+      path: /tmp/remote.sh
+      state: absent

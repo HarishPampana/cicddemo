@@ -1,0 +1,19 @@
+- name: Ansible Copy hosts file Local to Remote VM's
+  hosts: 'kmasters,kworkers'
+  tasks:
+    - name: copying file with playbook
+      become: true 
+      copy:
+        src: ~/cicddemo/officevm/config_file/kubadm_install.sh
+        dest: /tmp/kubeinstall.sh
+        owner: root
+        group: root        
+        mode: 0644
+
+    - name: Run Shell Script.
+      shell: sh /tmp/kubeinstall.sh
+
+    - name: Remove Shell Script
+      file:
+        path: /tmp/kubeinstall.sh
+        state: absent
