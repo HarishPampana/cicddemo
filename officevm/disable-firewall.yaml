@@ -1,0 +1,30 @@
+---
+# file: roles/common/tasks/disable-firewalld.yml
+
+- name: be sure firewalld is installed
+  hosts: 'kworkers, kmasters'
+  become: yes
+  dnf: name=firewalld state=installed
+  tags:
+   - install
+   - firewalld
+ 
+- name: be sure firewalld is disabled
+  hosts: 'kworkers, kmasters'
+  become: yes
+  systemd: name=firewalld enabled=no
+  tags:
+   - install
+   - atomic
+   - firewalld
+
+- name: be sure firewalld is stopped
+  hosts: 'kworkers, kmasters'
+  become: yes
+  systemd: name=firewalld state=stopped
+  ignore_errors: yes
+  tags:
+   - install
+   - atomic
+   - firewalld
+

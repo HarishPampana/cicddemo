@@ -1,0 +1,10 @@
+﻿127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+127.0.0.1       kmaster1.procco.com     kmaster1
+
+192.168.6.114	kmaster1.procco.com	kmaster1
+192.168.6.115	kmaster2.procco.com	kmaster2
+
+192.168.6.32	kworker1.procco.com	kworker1
+192.168.6.33	kworker1.procco.com	kworker2
+192.168.6.35	kworker1.procco.com	kworker3

@@ -1,0 +1,8 @@
+[kmasters]
+kmaster1 ansible_host=192.168.100.45	ansible_user=admin
+kmaster2 ansible_host=192.168.100.46	ansible_user=admin
+
+[kworkers]
+kworker1 ansible_host=192.168.100.47	ansible_user=admin
+kworker2 ansible_host=192.168.100.48	ansible_user=admin
+kworker3 ansible_host=192.168.100.49	ansible_user=admin

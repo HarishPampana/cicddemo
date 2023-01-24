@@ -1,0 +1,8 @@
+- hosts: 'kmasters,kworkers'
+  become: true
+  remote_user: root
+  tasks:
+  - name: Add docker-ce repository
+    shell: dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+    args:
+      creates: /etc/yum.repos.d/docker-ce.repo

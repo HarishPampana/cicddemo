@@ -1,0 +1,6 @@
+- hosts: 'kmasters,kworkers'  
+
+  become: yes  
+
+  tasks:
+   - ping

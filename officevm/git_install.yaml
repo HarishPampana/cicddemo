@@ -1,0 +1,9 @@
+---
+- hosts: 'kmasters,kworkers'
+  become: true
+  remote_user: root
+  tasks:
+  - name: Install git
+    yum:
+      name: git
+      state: latest

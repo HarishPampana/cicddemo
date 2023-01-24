@@ -1,0 +1,14 @@
+---
+- hosts: 'kworkers, kmasters'
+  become: yes
+
+  tasks:
+    - name: ICMP ping
+      icmp_ping:
+      dest: google.com
+      count: 4
+      register: result
+
+    - name: Show result
+      debug:
+      msg: "{{ result }}"

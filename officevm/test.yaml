@@ -1,0 +1,20 @@
+-
+    hosts: 'kmasters,kworkers'
+    become: true
+    remote_user: root
+    tasks:
+        -
+            name: set system timezone
+            timezone:
+                name: Asia/Bahrain
+        -
+            name: add custom repository
+            yum_repository:
+                name: docker-repo
+                description: docker repositories
+                baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+        -
+            name: ensure docker is installed
+            yum:
+                name: docker*
+                state: installed

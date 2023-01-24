@@ -1,0 +1,16 @@
+- hosts: 'kmasters,kworkers'
+  tasks:
+  - name: Add repo docker
+    become: true
+    yum_repositoriy:
+      name: docker-repo
+      description: “Repo for hosts docker install”
+      baseurl: "https://download.docker.com/linux/centos/docker-ce.repo"
+      gpgcheck: yes
+      gpgkey: file:///etc/pki/gpg-key
+
+  - name: Install git docker*
+    become: true
+    yum:
+      name: git
+      state: latest

@@ -1,0 +1,14 @@
+---
+- hosts: 'kmasters,kworkers'
+  become: true
+  remote_user: root
+  tasks:
+  - name: remove /etc/yum.repos.d/docker-repo.repo
+    yum_repository:
+      name: docker-repo
+      state: absent
+
+  - name: clean dnf metadata
+    command: dnf clean metadata
+    args:
+      warn: no

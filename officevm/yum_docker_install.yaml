@@ -1,0 +1,21 @@
+---
+- hosts: 'kmasters,kworkers'
+  become: true
+  remote_user: root
+  tasks:
+   - name: Gather the rpm package facts
+     package_facts:
+       manager: auto
+
+   - name: check if docker-ce is already installed
+     debug:
+       var: ansible_facts.packages['docker-ce']
+
+   - name: using command module to install docker-ce
+     command: sudo yum install docker-ce --nobest -y
+     when: "'docker-ce' not in ansible_facts.packages"
+     register: install_res
+
+   - name: whether docker is installed now
+     debug:
+       var: install_res
