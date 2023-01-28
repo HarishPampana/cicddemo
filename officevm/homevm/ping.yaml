@@ -1,0 +1,9 @@
+- hosts: 'kvmmasters,kvmworkers'  
+  become: yes  
+  gather_facts: False
+    #connection: local
+
+  tasks:
+    - name: ping
+      shell: ping -c 1 -w 2 google.com
+      ignore_errors: true     

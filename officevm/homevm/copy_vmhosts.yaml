@@ -1,0 +1,11 @@
+- name: Ansible Copy hosts file Local to Remote VM's
+  hosts: 'kvmmasters,kvmworkers'
+  tasks:
+    - name: copying file with playbook
+      become: true 
+      copy:
+        src: ~/cicddemo/officevm/homevm/vm_hosts
+        dest: /etc/hosts
+        owner: root
+        group: root        
+        mode: 0644

@@ -1,0 +1,9 @@
+---
+- hosts: 'kvmmasters,kvmworkers'
+  become: true
+  remote_user: root
+  tasks:
+    - name: Reset Kubernetes component
+      shell: "kubeadm reset --force"
+        #shell: "kubeadm reset --force --cri-socket=/var/run/{{ container_runtime }}/{{ container_runtime }}.sock"
+      ignore_errors: True

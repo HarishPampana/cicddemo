@@ -1,0 +1,16 @@
+﻿127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+#192.168.6.114	kmaster1.procco.com	kmaster1
+#192.168.6.115	kmaster2.procco.com	kmaster2
+
+#192.168.6.32	kworker1.procco.com	kworker1
+#192.168.6.33	kworker1.procco.com	kworker2
+#192.168.6.35	kworker1.procco.com	kworker3
+
+192.168.100.45	kmaster1.TIIGroup.Corp	kmaster1
+#192.168.100.46	kmaster2.TIIGroup.Corp	kmaster2
+
+192.168.100.47	kworker1.TIIGroup.Corp	kworker1
+192.168.100.48	kworker2.TIIGroup.Corp	kworker2
+192.168.100.49	kworker3.TIIGroup.Corp	kworker3

@@ -1,0 +1,9 @@
+
+---
+- hosts: 'kvmmasters,kvmworkers'
+  become: true
+  become_user: root
+  tasks:
+    - name: Rebooting the cloud server/bare metal box
+      reboot:
+
